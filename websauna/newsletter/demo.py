@@ -28,6 +28,11 @@ class DemoNewsletterRenderer:
         users = request.dbsession.query(User).all()
         return render("newsletter/demo_newsletter.html", value={"users": users}, request=self.request)
 
+    def tags(self):
+        return [
+            "newsletter"
+        ]
+
 
 class Initializer(websauna.system.DemoInitializer):
     """A demo / test app initializer for testing addon websauna.newsletter."""

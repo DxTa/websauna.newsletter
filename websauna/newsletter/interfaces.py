@@ -5,7 +5,6 @@ from typing import Tuple
 # Pyramid
 from zope.interface import Interface
 
-
 class INewsletterGenerator(Interface):
     """Newsletter interface.
 
@@ -20,4 +19,10 @@ class INewsletterGenerator(Interface):
         :param since: When the last newsletter was sent or None if the first outgoing newsletter on this site.
 
         :return: tuple (subject, html)
+        """
+
+    def tags() -> list:
+        """Support custom tags for newsletter interface
+
+        :return: list
         """
